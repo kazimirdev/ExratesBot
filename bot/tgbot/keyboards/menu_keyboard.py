@@ -1,7 +1,7 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-menu_keyboard = InlineKeyboardMarkup(row_width=4,
+menu_keyboard = InlineKeyboardMarkup(row_width=5,
         inline_keyboard=[
             [InlineKeyboardButton(
                 text="Fiducjarne Waluty",
@@ -21,6 +21,9 @@ menu_keyboard = InlineKeyboardMarkup(row_width=4,
             InlineKeyboardButton(
                 text="Pomnożyć Fiducjarne walyty",
                 callback_data="mult_fiat")],
+            [InlineKeyboardButton(
+                text="Więcej o kryprocie",
+                callback="more_crypro")],
             [InlineKeyboardButton(
                 text="Kod źródłowy",
                 url="https://github.com/Greenboyisyourdream/ExratesBot")]
