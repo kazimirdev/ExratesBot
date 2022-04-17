@@ -6,7 +6,9 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from tgbot.config import load_config
+from tgbot.handlers.fiat import register_get_fiat
 from tgbot.handlers.menu import register_menu
+from tgbot.filters.admin import AdminFilter
 from tgbot.middlewares.db import DbMiddleware
 
 logger = logging.getLogger(__name__)
@@ -22,6 +24,7 @@ def register_all_filters(dp):
 
 def register_all_handlers(dp):
     register_menu(dp)
+    register_get_fiat(dp)
 
 
 async def main():
