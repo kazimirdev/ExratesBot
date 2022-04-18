@@ -1,13 +1,12 @@
 import asyncio
 from aiogram import Dispatcher, types
 
+from tgbot.keyboards.data_keyboard import data_keyboard
 from tgbot.misc.fiatparse import fiat_parser
 
 
 async def get_fiat(cb: types.CallbackQuery):
-    fiat_parse = await fiat_parser()
-    fiat_loop = asyncio.get_event_loop()
-    fiats = fiat_loop.run_until_complete(fiat_parse())
+    fiats = await fiat_parser()
     answer = 'Fiducjarne kursy walut:\n'
     for fiat in fiats:
         lines = [
@@ -17,7 +16,7 @@ async def get_fiat(cb: types.CallbackQuery):
                 f"Sprzedaż: {fiat[3]}\n"
                 ]
         answer += "\n".join(lines)
-    await cb.message.reply(answer)
+    await cb.message.reply(answer, reply_markup=data_keyboard)
 
 
 def register_get_fiat(dp: Dispatcher):

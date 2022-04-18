@@ -1,12 +1,15 @@
 import asyncio
 import logging
+from os import register_at_fork
 
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from tgbot.config import load_config
+from tgbot.handlers.crypto import register_get_crypto
 from tgbot.handlers.fiat import register_get_fiat
+from tgbot.handlers.xml import register_get_crypro_xml 
 from tgbot.handlers.menu import register_menu
 from tgbot.filters.admin import AdminFilter
 from tgbot.middlewares.db import DbMiddleware
@@ -24,7 +27,9 @@ def register_all_filters(dp):
 
 def register_all_handlers(dp):
     register_menu(dp)
+    register_get_crypto(dp)
     register_get_fiat(dp)
+    register_get_crypro_xml(dp)
 
 
 async def main():

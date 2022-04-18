@@ -17,10 +17,10 @@ menu_keyboard = InlineKeyboardMarkup(
                 text="Sprzedać PLN",
                 callback_data="sell_fiat")],
             [InlineKeyboardButton(
-                text="Pomnożyć Kryptowalyty",
+                text="Pomnożyć kryptowalyty",
                 callback_data="mult_crypto"),
             InlineKeyboardButton(
-                text="Pomnożyć Fid. walyty",
+                text="Pomnożyć fid. walyty",
                 callback_data="mult_fiat")],
             [InlineKeyboardButton(
                 text="Więcej o kryprocie",

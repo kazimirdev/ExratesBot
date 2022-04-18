@@ -7,8 +7,8 @@ async def menu(instance: types.Message | types.CallbackQuery):
     answer = [
             'Cześć, {}!',
             'Ten bot daje ciebie moźliwość',
-            'uzyskać kursy kryprowalut',
-            'i fiducjarne kursy walut.',
+            'uzyskać kursy krypro-',
+            'i fiducjarnych walut.',
             '',
             'Wybierz w menu to',
             'co potrzebujesz:'
