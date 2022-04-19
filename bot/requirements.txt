@@ -1,5 +1,5 @@
 aiogram~=2.18
-dicttoxml~=1.7.4
+dicttoxml2~=2.0.0
 environs~=9.0
 aioredis~=2.0
 bs4~=0.0.1

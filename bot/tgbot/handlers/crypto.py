@@ -1,7 +1,7 @@
 from aiogram import Dispatcher, types
 from decimal import Decimal
 
-from tgbot.keyboards.data_keyboard import data_keyboard
+from tgbot.keyboards.crypto_data_keyboard import data_keyboard
 from tgbot.misc.cryptoparse import crypto_parser
 
 

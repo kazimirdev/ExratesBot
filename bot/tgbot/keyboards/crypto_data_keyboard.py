@@ -6,11 +6,11 @@ data_keyboard = InlineKeyboardMarkup(
         inline_keyboard=[
             [InlineKeyboardButton(
                 text="Pobierz .json",
-                callback_data='json'
+                callback_data='cjson'
                 ),
             InlineKeyboardButton(
                 text='Pobierz .xml',
-                callback_data='xml'
+                callback_data='cxml'
                 )],
             [InlineKeyboardButton(text='Menu głowne', callback_data='menu')]
             ]

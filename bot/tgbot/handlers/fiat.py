@@ -1,7 +1,7 @@
 import asyncio
 from aiogram import Dispatcher, types
 
-from tgbot.keyboards.data_keyboard import data_keyboard
+from tgbot.keyboards.fiat_data_keyboard import data_keyboard
 from tgbot.misc.fiatparse import fiat_parser
 
 
@@ -10,7 +10,7 @@ async def get_fiat(cb: types.CallbackQuery):
     answer = 'Fiducjarne kursy walut:\n'
     for fiat in fiats:
         lines = [
-                f"{fiat[0]}",
+                f"{fiat[0]}".replace("/", "-"),
                 f"Różnica za dobę: {fiat[1]}",
                 f"Kupno: {fiat[2]}",
                 f"Sprzedaż: {fiat[3]}\n"

@@ -8,8 +8,10 @@ from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from tgbot.config import load_config
 from tgbot.handlers.crypto import register_get_crypto
+from tgbot.handlers.crypto_json import register_get_crypto_json
+from tgbot.handlers.crypto_xml import register_get_crypro_xml 
 from tgbot.handlers.fiat import register_get_fiat
-from tgbot.handlers.xml import register_get_crypro_xml 
+from tgbot.handlers.fiat_xml import register_get_fiat_xml
 from tgbot.handlers.menu import register_menu
 from tgbot.filters.admin import AdminFilter
 from tgbot.middlewares.db import DbMiddleware
@@ -28,8 +30,10 @@ def register_all_filters(dp):
 def register_all_handlers(dp):
     register_menu(dp)
     register_get_crypto(dp)
-    register_get_fiat(dp)
+    register_get_crypto_json(dp)
     register_get_crypro_xml(dp)
+    register_get_fiat(dp)
+    register_get_fiat_xml(dp)
 
 
 async def main():
