@@ -2,7 +2,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 menu_keyboard = InlineKeyboardMarkup(
-        row_width=5,
+        row_width=4,
         inline_keyboard=[
             [InlineKeyboardButton(
                 text="Fiducjarne Waluty",
@@ -17,13 +17,7 @@ menu_keyboard = InlineKeyboardMarkup(
                 text="Sprzedać PLN",
                 callback_data="sell_fiat")],
             [InlineKeyboardButton(
-                text="Pomnożyć kryptowalyty",
-                callback_data="mult_crypto"),
-            InlineKeyboardButton(
-                text="Pomnożyć fid. walyty",
-                callback_data="mult_fiat")],
-            [InlineKeyboardButton(
-                text="Więcej o kryprocie",
+                text="Więcej o kryprowalucie",
                 callback_data="more_crypro")],
             [InlineKeyboardButton(
                 text="Kod źródłowy",

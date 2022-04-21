@@ -10,8 +10,12 @@ async def fiat_parser():
         rates = soup.find('div', {'class': 'container-inner'})
         blocks = [block.text for block in rates.findAll('div',
             {'class': 'currency-block'})]
-        data = [[block[:7], block[7:23], block[26:32],
-            block[36:]] for block in blocks[:-1]]
+        data = [[
+            block[:7],
+            f'{block[7:23].replace(",",".")}',
+            f'{block[26:32].replace(",",".")}',
+            f'{block[36:].replace(",",".")}'
+            ] for block in blocks[:-1]]
         return data
 
 
