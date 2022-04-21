@@ -5,7 +5,7 @@ from aiogram import types, Dispatcher
 from tgbot.keyboards.file_keyboard import file_keyboard
 
 
-async def get_bs_pln_json(cb: types.CallbackQuery):
+async def get_pln_json(cb: types.CallbackQuery):
     answer = "Plik był wysłan"
     part_of_filename = cb.message.text.split('\n')[0]
     filename = f"{part_of_filename} PLN {cb.message.date}.json"
@@ -20,5 +20,5 @@ async def get_bs_pln_json(cb: types.CallbackQuery):
     os.remove(filename)
 
 
-def register_get_bs_pln_json(dp: Dispatcher):
-    dp.register_callback_query_handler(get_bs_pln_json, text="bsjson")
+def register_get_pln_json(dp: Dispatcher):
+    dp.register_callback_query_handler(get_pln_json, text="bsjson")

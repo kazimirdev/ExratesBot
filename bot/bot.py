@@ -7,17 +7,18 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from tgbot.config import load_config
-from tgbot.handlers.answer_pln import register_answer_pln
-from tgbot.handlers.buy_sell_pln_json import register_get_bs_pln_json
-from tgbot.handlers.buy_pln import register_buy_pln
-from tgbot.handlers.crypto import register_get_crypto
-from tgbot.handlers.crypto_json import register_get_crypto_json
-from tgbot.handlers.crypto_xml import register_get_crypro_xml 
-from tgbot.handlers.fiat import register_get_fiat
-from tgbot.handlers.fiat_json import register_get_fiat_json
-from tgbot.handlers.fiat_xml import register_get_fiat_xml
-from tgbot.handlers.sell_pln import register_sell_pln
-from tgbot.handlers.menu import register_menu
+from tgbot.handlers import register_answer_pln
+from tgbot.handlers import register_buy_pln
+from tgbot.handlers import register_get_crypto
+from tgbot.handlers import register_get_crypto_json
+from tgbot.handlers import register_get_crypto_xml
+from tgbot.handlers import register_get_fiat
+from tgbot.handlers import register_get_fiat_json
+from tgbot.handlers import register_get_fiat_xml
+from tgbot.handlers import register_get_pln_json
+from tgbot.handlers import register_get_pln_xml
+from tgbot.handlers import register_menu
+from tgbot.handlers import register_sell_pln
 from tgbot.filters.admin import AdminFilter
 from tgbot.middlewares.db import DbMiddleware
 
@@ -34,16 +35,17 @@ def register_all_filters(dp):
 
 def register_all_handlers(dp):
     register_menu(dp)
-    register_buy_pln(dp)
-    register_get_bs_pln_json(dp)
     register_get_crypto(dp)
     register_get_crypto_json(dp)
-    register_get_crypro_xml(dp)
+    register_get_crypto_xml(dp)
     register_get_fiat(dp)
-    register_get_fiat_json(dp)
     register_get_fiat_xml(dp)
+    register_get_fiat_json(dp)
+    register_buy_pln(dp)
     register_sell_pln(dp)
     register_answer_pln(dp)
+    register_get_pln_json(dp)
+    register_get_pln_xml(dp)
 
 
 async def main():

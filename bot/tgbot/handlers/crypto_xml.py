@@ -20,5 +20,5 @@ async def get_crypto_xml(cb: types.CallbackQuery):
     os.remove(file_name)
 
 
-def register_get_crypro_xml(dp: Dispatcher):
+def register_get_crypto_xml(dp: Dispatcher):
     dp.register_callback_query_handler(get_crypto_xml, text="cxml")
