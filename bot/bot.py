@@ -1,26 +1,29 @@
 import asyncio
 import logging
-from os import register_at_fork
 
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.contrib.fsm_storage.redis import RedisStorage2
 
 from tgbot.config import load_config
-from tgbot.handlers import register_answer_pln
-from tgbot.handlers import register_buy_pln
-from tgbot.handlers import register_get_crypto
-from tgbot.handlers import register_get_crypto_json
-from tgbot.handlers import register_get_crypto_xml
-from tgbot.handlers import register_get_fiat
-from tgbot.handlers import register_get_fiat_json
-from tgbot.handlers import register_get_fiat_xml
-from tgbot.handlers import register_get_pln_json
-from tgbot.handlers import register_get_pln_xml
-from tgbot.handlers import register_menu
-from tgbot.handlers import register_sell_pln
+from tgbot.handlers.echo import register_echo 
+from tgbot.handlers import (register_answer_pln,
+                            register_buy_pln,
+                            register_get_crypto,
+                            register_get_crypto_json,
+                            register_get_crypto_xml,
+                            register_get_answer_fcd,
+                            register_get_fiat,
+                            register_get_fiat_json,
+                            register_get_fiat_xml,
+                            register_get_pln_json,
+                            register_get_pln_xml,
+                            register_write_name_fcd,
+                            register_menu,
+                            register_sell_pln)
 from tgbot.filters.admin import AdminFilter
 from tgbot.middlewares.db import DbMiddleware
+
 
 logger = logging.getLogger(__name__)
 
@@ -34,6 +37,7 @@ def register_all_filters(dp):
 
 
 def register_all_handlers(dp):
+
     register_menu(dp)
     register_get_crypto(dp)
     register_get_crypto_json(dp)
@@ -41,12 +45,15 @@ def register_all_handlers(dp):
     register_get_fiat(dp)
     register_get_fiat_xml(dp)
     register_get_fiat_json(dp)
+    register_write_name_fcd(dp)
+    register_get_answer_fcd(dp)
     register_buy_pln(dp)
     register_sell_pln(dp)
     register_answer_pln(dp)
     register_get_pln_json(dp)
     register_get_pln_xml(dp)
 
+    #register_echo(dp)
 
 async def main():
     logging.basicConfig(

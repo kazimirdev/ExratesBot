@@ -4,6 +4,8 @@ from .crypto_xml import register_get_crypto_xml
 from .fiat import register_get_fiat
 from .fiat_json import register_get_fiat_json
 from .fiat_xml import register_get_fiat_xml
+from .fcd_answer import register_get_answer_fcd
+from .fcd_write import register_write_name_fcd
 from .menu import register_menu
 from .pln_answer import register_answer_pln
 from .pln_buy import register_buy_pln

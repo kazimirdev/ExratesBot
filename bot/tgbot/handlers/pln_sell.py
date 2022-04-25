@@ -5,6 +5,7 @@ from tgbot.states.buy_or_sell_state import BOS
 
 
 async def sell_pln(cb: types.CallbackQuery, state: FSMContext):
+    await cb.answer()
     await cb.message.answer(text="Ile chcesz sprzedać PLN?")
     await BOS.choose_func_converter.set()
     await state.update_data(answer="sell")

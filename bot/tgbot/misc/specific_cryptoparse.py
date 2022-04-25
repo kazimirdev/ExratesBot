@@ -14,7 +14,6 @@ async def specific_crypro_parser(currency: str):
         if "something went wrong" in soup.text:
             return None
         else:
-            answer = {"result": True} 
             table = soup.find('div', {'class': 'sc-16r8icm-0 nds9rn-0 dAxhCK'})
             keys = [
                     re.sub("<[^>]*>", 
@@ -24,6 +23,10 @@ async def specific_crypro_parser(currency: str):
                     re.sub("<[^>]*>",
                     " ",
                     str(t)).strip() for t in table.findAll("td")]
+            for v in range(len(values)):
+                if "     " in values[v]:
+                    values[v] = values[v].split("     ")[0]
+            
             table = [[keys[i], values[i]] for i in range(len(keys))]
             return table 
 

@@ -18,7 +18,7 @@ menu_keyboard = InlineKeyboardMarkup(
                 callback_data="sell_fiat")],
             [InlineKeyboardButton(
                 text="Więcej o kryprowalucie",
-                callback_data="more_crypro")],
+                callback_data="more_crypto")],
             [InlineKeyboardButton(
                 text="Kod źródłowy",
                 url="https://github.com/Greenboyisyourdream/ExratesBot")]

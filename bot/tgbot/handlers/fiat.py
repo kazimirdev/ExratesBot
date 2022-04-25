@@ -6,6 +6,7 @@ from tgbot.misc.fiatparse import fiat_parser
 
 
 async def get_fiat(cb: types.CallbackQuery):
+    await cb.answer()
     fiats = await fiat_parser()
     answer = 'Fiducjarne kursy walut:\n'
     for fiat in fiats:

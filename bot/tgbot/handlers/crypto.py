@@ -6,6 +6,7 @@ from tgbot.misc.cryptoparse import crypto_parser
 
 
 async def get_crypto(cb: types.CallbackQuery):
+    await cb.answer()
     result = await crypto_parser()
     answer = "Kursy kryptowalut:\n"
     for r in result.items():

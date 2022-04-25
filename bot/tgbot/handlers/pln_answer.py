@@ -1,3 +1,5 @@
+import logging
+
 from decimal import Decimal
 
 from aiogram import Dispatcher, types
@@ -5,12 +7,13 @@ from aiogram.dispatcher.storage import FSMContext
 
 from tgbot.misc.fiatparse import fiat_parser
 from tgbot.keyboards.buy_sell_keyboard import bs_keyboard
-from tgbot.keyboards.nie_liczba_keyboard import nie_liczba_keyboard
+from tgbot.keyboards.error import error_keyboard 
 from tgbot.states.buy_or_sell_state import BOS
 
 async def answer_pln(message: types.Message, state: FSMContext):
     state_data = await state.get_data()
     
+    logging.info(f'{message.text=}')
     if message.text.isdecimal() or message.text.isdigit():
         answer = ""
         fiat = await fiat_parser()
@@ -36,7 +39,8 @@ async def answer_pln(message: types.Message, state: FSMContext):
     
     else:
         await message.reply(text="To nie jest liczbą",
-                reply_markup=nie_liczba_keyboard)
+                reply_markup=error_keyboard)
+
 
 
 def register_answer_pln(dp: Dispatcher):
