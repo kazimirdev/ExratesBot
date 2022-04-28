@@ -10,14 +10,12 @@ from tgbot.handlers.echo import register_echo
 from tgbot.handlers import (register_answer_pln,
                             register_buy_pln,
                             register_get_crypto,
-                            register_get_crypto_json,
-                            register_get_crypto_xml,
+                            register_get_crypto_file,
                             register_get_answer_fcd,
+                            register_get_fcd,
                             register_get_fiat,
-                            register_get_fiat_json,
-                            register_get_fiat_xml,
-                            register_get_pln_json,
-                            register_get_pln_xml,
+                            register_get_fiat_file,
+                            register_get_pln_file,
                             register_write_name_fcd,
                             register_menu,
                             register_sell_pln)
@@ -40,18 +38,16 @@ def register_all_handlers(dp):
 
     register_menu(dp)
     register_get_crypto(dp)
-    register_get_crypto_json(dp)
-    register_get_crypto_xml(dp)
+    register_get_crypto_file(dp)
     register_get_fiat(dp)
-    register_get_fiat_xml(dp)
-    register_get_fiat_json(dp)
+    register_get_fiat_file(dp)
     register_write_name_fcd(dp)
     register_get_answer_fcd(dp)
+    register_get_fcd(dp)
     register_buy_pln(dp)
     register_sell_pln(dp)
     register_answer_pln(dp)
-    register_get_pln_json(dp)
-    register_get_pln_xml(dp)
+    register_get_pln_file(dp)
 
     #register_echo(dp)
 
