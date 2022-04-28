@@ -8,6 +8,7 @@ from tgbot.keyboards.file_keyboard import file_keyboard
 
 
 async def get_pln_file(cb: types.CallbackQuery):
+    await cb.answer()
     answer = "Plik był wysłan"
     part_of_filename = cb.message.text.split('\n')[0]
     filename = f"{part_of_filename} PLN {cb.message.date}."

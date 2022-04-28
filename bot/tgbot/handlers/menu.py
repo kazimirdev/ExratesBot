@@ -24,6 +24,7 @@ async def menu(instance: types.Message | types.CallbackQuery,
                 )
         await state.reset_state(with_data=True)
     if isinstance(instance, types.CallbackQuery):
+        await instance.answer()
         await instance.message.answer(
                 '\n'.join(
                     answer[-2:]
