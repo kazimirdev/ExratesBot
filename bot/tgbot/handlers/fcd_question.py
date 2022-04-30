@@ -9,10 +9,7 @@ async def write_name_fcd(cb: types.CallbackQuery, state: FSMContext):
     answer = [
             "Napisz nazwę nazwę kryptowaluty:",
             "",
-            "(Pisz pęlny tytuł kryptowaluty."
-            "Ja nie zrozumiem ciebie jeśli ty",
-            "napiszesz krótky tytuł waluty, narptykład: "
-            'nie "btc", a "bitcoin".)'
+            '(Pisz pęlny tytuł kryptowaluty. Ja nie zrozumiem ciebie jeśli ty napiszesz krótky tytuł waluty, narptykład "btc", a nie "bitcoin".)'
             ]
     await cb.message.answer(text="\n".join(answer))
     await BOS.choose_func_converter.set()
