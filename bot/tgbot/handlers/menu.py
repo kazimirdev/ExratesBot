@@ -2,10 +2,12 @@ from aiogram import Dispatcher, types
 from aiogram.dispatcher.storage import FSMContext
 
 from tgbot.keyboards import menu_keyboard
+from tgbot.states.buy_or_sell_state import BOS
 
 
 async def menu(instance: types.Message | types.CallbackQuery,
         state: FSMContext):
+    state.reset_state(with_data=True)
     answer = [
             'Cześć, {}!',
             'Ten bot daje ciebie moźliwość',
@@ -36,7 +38,9 @@ async def menu(instance: types.Message | types.CallbackQuery,
 def register_menu(dp: Dispatcher):
     dp.register_message_handler(
             menu,
-            commands=['start'])
+            commands=['start'],
+            state="*")
     dp.register_callback_query_handler(
             menu,
-            text='menu')
+            text='menu',
+            state="*")
