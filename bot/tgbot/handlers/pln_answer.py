@@ -1,6 +1,6 @@
 import logging
 
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 
 from aiogram import Dispatcher, types
 from aiogram.dispatcher.storage import FSMContext
@@ -14,7 +14,7 @@ async def answer_pln(message: types.Message, state: FSMContext):
     state_data = await state.get_data()
     
     logging.info(f'{message.text=}')
-    if message.text.isdecimal() or message.text.isdigit():
+    try:
         answer = ""
         fiat = await fiat_parser()
         l_answer = []
@@ -37,7 +37,7 @@ async def answer_pln(message: types.Message, state: FSMContext):
                 reply_markup=bs_keyboard)
         await state.reset_state(with_data=True)
     
-    else:
+    except InvalidOperation:
         await message.reply(text="To nie jest liczbą",
                 reply_markup=error_keyboard)
 
