@@ -2,7 +2,7 @@
 # Telegram-bot sprawdzanik kursów walut
 ***
 
-Ty możesz używać tego bota, klikaj to linku [@Exrates_gbisyd_bot](https://t.me/Exrates_gbisyd_bot) w [Telegramie](https://telegram.org/). 
+Ty możesz używać tego bota, klikaj to linku [@kursywalut_bot](https://t.me/Exrates_gbisyd_bot) w [Telegramie](https://telegram.org/). 
 ---
 
 
@@ -29,7 +29,7 @@ Ty możesz używać tego bota, klikaj to linku [@Exrates_gbisyd_bot](https://t.m
 # Telegram-bot exchange rates checker
 ***
 
-You can try using this bot at link [@Exrates_gbisyd_bot](https://t.me/Exrates_gbisyd_bot) in [Telegram](https://telegram.org/).
+You can try using this bot at link [@kursywalut_bot](https://t.me/Exrates_gbisyd_bot) in [Telegram](https://telegram.org/).
 ---
 
 
