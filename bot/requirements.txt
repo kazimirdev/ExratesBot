@@ -3,3 +3,4 @@ dicttoxml2~=2.0.0
 environs~=9.0
 aioredis~=2.0
 bs4~=0.0.1
+lxml~=4.9.2
