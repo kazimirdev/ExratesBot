@@ -10,9 +10,7 @@ async def menu(instance: types.Message | types.CallbackQuery,
     state.reset_state(with_data=True)
     answer = [
             'Cześć, {}!',
-            'Ten bot daje ciebie moźliwość',
-            'uzyskać kursy krypro-',
-            'i fiducjarnych walut.',
+            'Kalkulator walut.',
             '',
             'Wybierz w menu to',
             'co potrzebujesz:'
