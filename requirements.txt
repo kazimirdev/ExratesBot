@@ -1,0 +1,8 @@
+aiogram<=3.0
+alembic~=1.12
+betterlogging
+environs~=9.0
+redis
+sqlalchemy~=2.0
+
+beautifulsoup4>=4.12.2 
